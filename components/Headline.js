@@ -1,13 +1,15 @@
 import styles from '../styles/Home.module.css';
 
-export default function Headline() {
+//propsは親からのデータを引き渡す
+export default function Headline(props) {
+  console.log(props.title);
   return (
     <div>
-      <h1 className={styles.title}>Index Page</h1>
+      <h1 className={styles.title}>{props.page} Page</h1>
 
       <p className={styles.description}>
         Get started by editing
-        <code className={styles.code}>pages/index.js</code>
+        <code className={styles.code}>pages/{props.page}.js</code>
       </p>
     </div>
   );
