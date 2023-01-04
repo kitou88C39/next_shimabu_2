@@ -1,7 +1,7 @@
 import styles from '../styles/Home.module.css';
 
 //propsは親からのデータを引き渡す
-export default function Headline(props) {
+export function Headline(props) {
   console.log(props.title);
   return (
     <div>
