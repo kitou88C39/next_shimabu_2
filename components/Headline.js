@@ -9,7 +9,7 @@ export function Headline(props) {
 
       <p className={styles.description}>
         Get started by editing
-        {props.code}
+        {props.children}
       </p>
       <button onClick={props.onClick}>ボタン</button>
     </div>

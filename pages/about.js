@@ -16,15 +16,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Headline
-          page='About'
-          number={1111}
-          array={[1, 2, 3]}
-          obj={{ foo: 'foo', bar: 'bar' }}
-          boolean
-          code={<code className={styles.code}>pages/about.js</code>}
-          onClick={() => alert('クリック')}
-        />
+        <Headline page='About'>
+          // number={1111}
+          // array={[1, 2, 3]}
+          // obj={{ foo: 'foo', bar: 'bar' }}
+          // boolean code={<code className={styles.code}>pages/about.js</code>}
+          <code className={styles.code}>pages/about.js</code>
+          //onClick={() => alert('クリック')}
+        </Headline>
 
         {/* <Headline title='About Page' page='About' /> */}
         <Links />

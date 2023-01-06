@@ -16,11 +16,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Headline
-          page='Index'
+        <Headline page='Index'>
           code={<code className={styles.code}>pages/index.js</code>}
-          onClick={() => alert('クリック')}
-        />
+          //onClick={() => alert('クリック')}
+        </Headline>
         <Links />
       </main>
       <Footer />
