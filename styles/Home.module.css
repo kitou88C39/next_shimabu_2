@@ -45,6 +45,12 @@
   width: var(--max-width);
   max-width: 100%;
 }
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-transform: capitalize;
+}
 
 .card {
   padding: 1rem 1.2rem;
