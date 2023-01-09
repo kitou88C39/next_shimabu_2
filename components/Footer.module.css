@@ -21,10 +21,3 @@
 .logo {
   height: 1em;
 }
-
-@media (max-width: 600px) {
-  .logo {
-    width: 100%;
-    flex-direction: column;
-  }
-}
