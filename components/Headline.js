@@ -1,4 +1,4 @@
-import styles from '../styles/Home.module.css';
+import styles from './Headline.module.css';
 
 //propsは親からのデータを引き渡す
 export function Headline(props) {
