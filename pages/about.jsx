@@ -12,7 +12,7 @@ export default function Home() {
     <div className={styles.conteiner}>
       <Head>
         <title>About page</title>
-        <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.ico' /> */}
       </Head>
       <Header />
       <Main page='about' />
