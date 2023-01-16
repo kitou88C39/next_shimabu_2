@@ -14,6 +14,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
+      <a href='/about'>Button</a>
       <button
         onClick={function () {
           alert(123);
