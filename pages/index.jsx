@@ -12,9 +12,15 @@ export default function Home() {
     <div className={styles.conteiner}>
       <Head>
         <title>Index Page</title>
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Header />
+      <button
+        onClick={function () {
+          alert(123);
+        }}
+      >
+        Button
+      </button>
       <Main page='index' />
       <Footer />
     </div>
