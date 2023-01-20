@@ -15,6 +15,15 @@ export default function Home() {
       </Head>
       <Header />
       <a href='/about'>Button</a>
+      <a
+        href='/about'
+        onClick={(e) => {
+          e.preventDefault();
+          alert(123);
+        }}
+      >
+        Button
+      </a>
       <button
         onClick={function () {
           alert(123);
