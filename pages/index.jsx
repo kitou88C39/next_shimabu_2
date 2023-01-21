@@ -7,12 +7,14 @@ import { Header } from '../components/Header/index';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const handleClick = (e) => {
-  console.log(e.target.href);
-  e.preventDefault();
-};
-
 export default function Home() {
+  const foo = 1;
+  const handleClick = (e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  };
+
   return (
     <div className={styles.conteiner}>
       <Head>
