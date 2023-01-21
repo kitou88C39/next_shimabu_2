@@ -7,6 +7,11 @@ import { Header } from '../components/Header/index';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const handleClick = (e) => {
+  console.log(e.target.href);
+  e.preventDefault();
+};
+
 export default function Home() {
   return (
     <div className={styles.conteiner}>
@@ -14,8 +19,10 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a href='/about'>Button</a>
-      <a
+      <a href='/about ' onClick={handleClick}>
+        Button
+      </a>
+      {/* <a
         href='/about'
         onClick={(e) => {
           e.preventDefault();
@@ -23,14 +30,14 @@ export default function Home() {
         }}
       >
         Button
-      </a>
-      <button
+      </a> */}
+      {/* <button
         onClick={function () {
           alert(123);
         }}
       >
         Button
-      </button>
+      </button> */}
       <Main page='index' />
       <Footer />
     </div>
