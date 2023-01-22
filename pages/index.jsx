@@ -4,17 +4,18 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer/index';
 import { Main } from '../components/Main/index';
 import { Header } from '../components/Header/index';
+import { useCallback } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const handleClick = (e, foo) => {
-  console.log(e.target.href);
-  e.preventDefault();
-  alert(foo);
-};
-
 export default function Home() {
   const foo = 1;
+
+  const handleClick = useCallback((e) => {
+    console.log(e.target.href);
+    e.preventDefault();
+    alert(foo);
+  }, []);
 
   return (
     <div className={styles.conteiner}>
@@ -22,12 +23,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a
-        href='/about '
-        onClick={(e) => {
-          handleClick(e, foo);
-        }}
-      >
+      <a href='/about ' onClick={handleClick}>
         Button
       </a>
       {/* <a
