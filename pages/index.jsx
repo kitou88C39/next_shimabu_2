@@ -17,7 +17,10 @@ export default function Home() {
   //   alert(foo);
   // }, []);
   useEffect(() => {
-    document.body.style.backgroundColor = 'blue';
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
   }, []);
 
   return (
