@@ -6,6 +6,12 @@ import { Headline } from '../Headline';
 const inter = Inter({ subsets: ['latin'] });
 
 export function Main(props) {
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
   return (
     <main className={styles.main}>
       <Headline page={props.page}>
