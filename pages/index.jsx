@@ -16,12 +16,13 @@ export default function Home() {
   //   e.preventDefault();
   //   alert(foo);
   // }, []);
-  useEffect(() => {
-    document.body.style.backgroundColor = 'lightblue';
-    return () => {
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
+
+  // useEffect(() => {
+  //   document.body.style.backgroundColor = 'lightblue';
+  //   return () => {
+  //     document.body.style.backgroundColor = '';
+  //   };
+  // }, []);
 
   return (
     <div className={styles.conteiner}>
