@@ -4,15 +4,18 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer/index';
 import { Main } from '../components/Main/index';
 import { Header } from '../components/Header/index';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  let foo = 1;
+  const [foo, setFoo] = useState(1);
+  //let foo = 1;
 
   const handleClick = (e) => {
-    foo = foo + 1;
+    setFoo(function (foo) {
+      return foo + 1;
+    //foo = foo + 1;
   };
 
   useEffect(() => {
