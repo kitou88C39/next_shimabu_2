@@ -9,9 +9,11 @@ import { useCallback, useEffect } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const foo = 1;
+  let foo = 1;
 
-  const handleClick = (e) => {};
+  const handleClick = (e) => {
+    foo = foo + 1;
+  };
 
   useEffect(() => {
     document.body.style.backgroundColor = 'lightblue';
@@ -26,7 +28,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-
+      <h1>{foo}</h1>
       <button
         onClick={function () {
           alert(123);
