@@ -9,20 +9,16 @@ import { useCallback, useEffect } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  // const foo = 1;
+  const foo = 1;
 
-  // const handleClick = useCallback((e) => {
-  //   console.log(e.target.href);
-  //   e.preventDefault();
-  //   alert(foo);
-  // }, []);
+  const handleClick = (e) => {};
 
-  // useEffect(() => {
-  //   document.body.style.backgroundColor = 'lightblue';
-  //   return () => {
-  //     document.body.style.backgroundColor = '';
-  //   };
-  // }, []);
+  useEffect(() => {
+    document.body.style.backgroundColor = 'lightblue';
+    return () => {
+      document.body.style.backgroundColor = '';
+    };
+  }, []);
 
   return (
     <div className={styles.conteiner}>
@@ -30,25 +26,14 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      {/* <a href='/about ' onClick={handleClick}>
-        Button
-      </a> */}
-      {/* <a
-        href='/about'
-        onClick={(e) => {
-          e.preventDefault();
-          alert(123);
-        }}
-      >
-        Button
-      </a> */}
-      {/* <button
+
+      <button
         onClick={function () {
           alert(123);
         }}
       >
         Button
-      </button> */}
+      </button>
       <Main page='index' />
       <Footer />
     </div>
