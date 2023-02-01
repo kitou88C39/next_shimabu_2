@@ -13,17 +13,17 @@ export default function Home() {
   //let foo = 1;
 
   const handleClick = (e) => {
-    setFoo(function (foo) {
-      return foo + 1;
+    setFoo((foo) => foo + 1);
     //foo = foo + 1;
   };
 
   useEffect(() => {
+    console.log('foo');
     document.body.style.backgroundColor = 'lightblue';
     return () => {
       document.body.style.backgroundColor = '';
     };
-  }, []);
+  }, [count]);
 
   return (
     <div className={styles.conteiner}>
