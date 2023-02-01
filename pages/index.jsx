@@ -13,8 +13,10 @@ export default function Home() {
   //let foo = 1;
 
   const handleClick = useCallback((e) => {
-    setFoo((foo) => foo + 1);
-    //foo = foo + 1;
+    //console.log('count');
+    if (count < 10) {
+      setCount((count) => count + 1);
+    }
   }, []);
 
   useEffect(() => {
