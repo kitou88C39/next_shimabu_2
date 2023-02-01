@@ -10,14 +10,18 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const [foo, setFoo] = useState(1);
+  const [count, setCount] = useState(1);
   //let foo = 1;
 
-  const handleClick = useCallback((e) => {
-    //console.log('count');
-    if (count < 10) {
-      setCount((count) => count + 1);
-    }
-  }, []);
+  const handleClick = useCallback(
+    (e) => {
+      console.log('count');
+      if (count < 10) {
+        setCount((count) => count + 1);
+      }
+    },
+    [count]
+  );
 
   useEffect(() => {
     //console.log('foo');
