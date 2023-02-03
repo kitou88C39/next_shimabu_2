@@ -41,10 +41,16 @@ export default function Home() {
       {isShow ? <h1>{count}</h1> : null}
       <button
         onClick={() => {
-          setIsShow(false);
+          setIsShow((isShow) => {
+            if (isShow === true) {
+              return false;
+            } else {
+              return true;
+            }
+          });
         }}
       >
-        非表示
+        {isShow ? '非表示' : '表示'}
       </button>
       <button
         onClick={function () {
