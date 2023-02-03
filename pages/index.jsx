@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home() {
   const [text, setText] = useState();
   const [count, setCount] = useState(1);
-  //let foo = 1;
+  const [isShow, setIsShow] = useState(true);
 
   const handleClick = useCallback(
     (e) => {
@@ -38,7 +38,7 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <h1>{foo}</h1>
+      {true ? <h1>{count}</h1> : null}
       <button
         onClick={function () {
           alert(123);
@@ -46,7 +46,13 @@ export default function Home() {
       >
         Button
       </button>
-      <input type='text' value={text} />
+      <input
+        type='text'
+        value={text}
+        onChange={(e) => {
+          setText(e.target.value);
+        }}
+      />
       <Main page='index' />
       <Footer />
     </div>
