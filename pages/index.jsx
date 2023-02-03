@@ -38,7 +38,14 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      {true ? <h1>{count}</h1> : null}
+      {isShow ? <h1>{count}</h1> : null}
+      <button
+        onClick={() => {
+          setIsShow(false);
+        }}
+      >
+        非表示
+      </button>
       <button
         onClick={function () {
           alert(123);
