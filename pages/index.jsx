@@ -42,11 +42,10 @@ export default function Home() {
       <button
         onClick={() => {
           setIsShow((isShow) => {
-            if (isShow === true) {
+            if (isShow) {
               return false;
-            } else {
-              return true;
             }
+            return true;
           });
         }}
       >
