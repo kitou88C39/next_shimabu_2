@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const [foo, setFoo] = useState(1);
+  const [text, setText] = useState();
   const [count, setCount] = useState(1);
   //let foo = 1;
 
@@ -46,6 +46,7 @@ export default function Home() {
       >
         Button
       </button>
+      <input type='text' value={text} />
       <Main page='index' />
       <Footer />
     </div>
