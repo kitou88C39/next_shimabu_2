@@ -22,6 +22,9 @@ export default function Home() {
     },
     [count]
   );
+  const handleDisplay = useCallback(() => {
+    setIsShow((isShow) => !isShow);
+  }, []);
 
   useEffect(() => {
     //console.log('foo');
@@ -39,33 +42,9 @@ export default function Home() {
       </Head>
       <Header />
       {isShow ? <h1>{count}</h1> : null}
-      <button
-        onClick={() => {
-          setIsShow((isShow) => {
-            // if (isShow) {
-            //   return false;
-            // }
-            // return isShow ? false : true;
-            return !isShow;
-          });
-        }}
-      >
-        {isShow ? '非表示' : '表示'}
-      </button>
-      <button
-        onClick={function () {
-          alert(123);
-        }}
-      >
-        Button
-      </button>
-      <input
-        type='text'
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-      />
+      <button onClick={handleClick}>ボタン</button>
+      <button onClick={handleDisplay}>{isShow ? '非表示' : '表示'}</button>
+      <input type='text' value={text} onChange={handleChange} />
       <Main page='index' />
       <Footer />
     </div>
