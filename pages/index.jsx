@@ -12,6 +12,7 @@ export default function Home() {
   const [text, setText] = useState();
   const [count, setCount] = useState(1);
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(
     (e) => {
@@ -24,6 +25,12 @@ export default function Home() {
   );
   const handleDisplay = useCallback(() => {
     setIsShow((isShow) => !isShow);
+  }, []);
+
+  const handleAdd = useCallback(() => {
+    setArray((prevArrey) => {
+      return prevArrey;
+    });
   }, []);
 
   useEffect(() => {
@@ -45,6 +52,13 @@ export default function Home() {
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? '非表示' : '表示'}</button>
       <input type='text' value={text} onChange={handleChange} />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map((item) => {
+          return <li key={item}>{item}</li>;
+        })}
+      </ul>
+
       <Main page='index' />
       <Footer />
     </div>
