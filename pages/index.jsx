@@ -28,10 +28,14 @@ export default function Home() {
   }, []);
 
   const handleAdd = useCallback(() => {
-    setArray((prevArrey) => {
-      return prevArrey;
+    setArray((prevArray) => {
+      if (prevArray.some((item) => item === text)) {
+        alert('同じ要素が既に存在します。');
+        return prevArray;
+      }
+      return [...prevArray, text];
     });
-  }, []);
+  }, [text]);
 
   useEffect(() => {
     //console.log('foo');
