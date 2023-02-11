@@ -8,24 +8,25 @@ import { useCallback, useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
-  const [text, setText] = useState();
+const useCounter = () => {
   const [count, setCount] = useState(1);
   const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
-
-  const handleClick = useCallback(
-    (e) => {
-      console.log('count');
-      if (count < 10) {
-        setCount((prevCount) => prevCount + 1);
-      }
-    },
-    [count]
-  );
+  const handleClick = useCallback(() => {
+    if (count < 10) {
+      setCount((prevCount) => prevCount + 1);
+    }
+  }, [count]);
   const handleDisplay = useCallback(() => {
     setIsShow((prevIsShow) => !prevIsShow);
   }, []);
+
+  return { count, isShow, handleClick, handleDisplay };
+};
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const [text, setText] = useState('');
+  const [array, setArray] = useState([]);
 
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
@@ -53,9 +54,11 @@ export default function Home() {
       </Head>
       <Header />
       <Main page='about' />
+
       {isShow ? <h1>{count}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow ? '非表示' : '表示'}</button>
+
       <input type='text' value={text} onChange={handleChange} />
       <button onClick={handleAdd}>追加</button>
       <ul>
@@ -63,6 +66,7 @@ export default function Home() {
           return <li key={item}>{item}</li>;
         })}
       </ul>
+
       <Footer />
     </div>
   );

@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
-  const [text, setText] = useState();
+  const [text, setText] = useState('');
   const [count, setCount] = useState(1);
   const [isShow, setIsShow] = useState(true);
   const [array, setArray] = useState([]);
