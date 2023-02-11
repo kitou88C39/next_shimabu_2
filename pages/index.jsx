@@ -32,18 +32,19 @@ const useInputArray = () => {
   return { text, array, handleChange, handleAdd };
 };
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const { text, array, handleChange, handleAdd } = useInputArray();
-
+const useBgLightBlue = () => {
   useEffect(() => {
-    //console.log('foo');
     document.body.style.backgroundColor = 'lightblue';
     return () => {
-      //console.log('bar');
       document.body.style.backgroundColor = '';
     };
   }, []);
+};
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
+  useBgLightBlue();
 
   return (
     <div className={styles.conteiner}>
