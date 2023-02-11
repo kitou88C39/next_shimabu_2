@@ -4,33 +4,36 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer/index';
 import { Main } from '../components/Main/index';
 import { Header } from '../components/Header/index';
-import { useCallback, useEffect, useState } from 'react';
+//import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useCounter } from 'hooks/useCounter';
+import { useInputArray } from 'hooks/useInputArray';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const useInputArray = () => {
-  const [text, setText] = useState('');
-  const [array, setArray] = useState([]);
+// const useInputArray = () => {
+//   const [text, setText] = useState('');
+//   const [array, setArray] = useState([]);
 
-  const handleChange = useCallback((e) => {
-    if (e.target.value.length > 5) {
-      alert('5文字以内にしてください');
-      return;
-    }
-    setText(e.target.value.trim());
-  }, []);
+//   const handleChange = useCallback((e) => {
+//     if (e.target.value.length > 5) {
+//       alert('5文字以内にしてください');
+//       return;
+//     }
+//     setText(e.target.value.trim());
+//   }, []);
 
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
-        alert('同じ要素が既に存在します。');
-        return prevArray;
-      }
-      return [...prevArray, text];
-    });
-  }, [text]);
-  return { text, array, handleChange, handleAdd };
-};
+//   const handleAdd = useCallback(() => {
+//     setArray((prevArray) => {
+//       if (prevArray.some((item) => item === text)) {
+//         alert('同じ要素が既に存在します。');
+//         return prevArray;
+//       }
+//       return [...prevArray, text];
+//     });
+//   }, [text]);
+//   return { text, array, handleChange, handleAdd };
+// };
 
 const useBgLightBlue = () => {
   useEffect(() => {
