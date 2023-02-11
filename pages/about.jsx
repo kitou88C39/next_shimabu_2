@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
 import { Header } from '../components/Header';
 import { useCallback, useEffect, useState } from 'react';
+import { useCounter } from 'hooks/useCounter';
 
 const inter = Inter({ subsets: ['latin'] });
 
