@@ -4,34 +4,16 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
 import { Header } from '../components/Header';
-import { useCallback, useEffect, useState } from 'react';
 import { useCounter } from 'hooks/useCounter';
+import { useInputArray } from 'hooks/useInputArray';
+import { useBgLightBlue } from 'hooks/useBgLightBlue';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const [text, setText] = useState('');
-  const [array, setArray] = useState([]);
-
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
-        alert('同じ要素が既に存在します。');
-        return prevArray;
-      }
-      return [...prevArray, text];
-    });
-  }, [text]);
-
-  useEffect(() => {
-    //console.log('foo');
-    document.body.style.backgroundColor = 'lightblue';
-    return () => {
-      //console.log('bar');
-      document.body.style.backgroundColor = '';
-    };
-  }, []);
+  const { text, array, handleChange, handleAdd } = useInputArray();
+  useBgLightBlue();
 
   return (
     <div className={styles.conteiner}>
