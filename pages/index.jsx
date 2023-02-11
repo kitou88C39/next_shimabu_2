@@ -8,23 +8,16 @@ import { useCallback, useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+const useInputArray = () => {
   const [text, setText] = useState('');
-  const [count, setCount] = useState(1);
-  const [isShow, setIsShow] = useState(true);
   const [array, setArray] = useState([]);
 
-  const handleClick = useCallback(
-    (e) => {
-      console.log('count');
-      if (count < 10) {
-        setCount((prevCount) => prevCount + 1);
-      }
-    },
-    [count]
-  );
-  const handleDisplay = useCallback(() => {
-    setIsShow((prevIsShow) => !prevIsShow);
+  const handleChange = useCallback((e) => {
+    if (e.target.value.length > 5) {
+      alert('5文字以内にしてください');
+      return;
+    }
+    setText(e.target.value.trim());
   }, []);
 
   const handleAdd = useCallback(() => {
@@ -36,6 +29,12 @@ export default function Home() {
       return [...prevArray, text];
     });
   }, [text]);
+  return { text, array, handleChange, handleAdd };
+};
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
 
   useEffect(() => {
     //console.log('foo');
