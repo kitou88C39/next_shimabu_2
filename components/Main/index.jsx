@@ -41,7 +41,7 @@ export function Main(props) {
   }, []);
   return (
     <main className={styles.main}>
-      <Headline page={props.page}>
+      <Headline page={props.page} handleReduce={handleReduce}>
         <code className={classes.code}>{items.length}</code>
       </Headline>
       <Links items={items} handleReduce={handleReduce} />
