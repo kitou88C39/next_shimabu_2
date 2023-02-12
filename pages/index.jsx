@@ -4,9 +4,6 @@ import styles from '../styles/Home.module.css';
 import { Footer } from '../components/Footer/index';
 import { Main } from '../components/Main/index';
 import { Header } from '../components/Header/index';
-// import { useCounter } from 'hooks/useCounter';
-// import { useInputArray } from 'hooks/useInputArray';
-// import { useBgLightBlue } from 'hooks/useBgLightBlue';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,8 +18,6 @@ export default function Home(props) {
     handleChange,
     handleAdd,
   } = props;
-  // const { text, array, handleChange, handleAdd } = useInputArray();
-  // useBgLightBlue();
 
   return (
     <div className={styles.conteiner}>
