@@ -7,7 +7,7 @@ import { Header } from '../components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home(props) {
+const Home = (props) => {
   return (
     <div className={styles.conteiner}>
       <Head>
@@ -34,4 +34,5 @@ export default function Home(props) {
       <Footer />
     </div>
   );
-}
+};
+export default Home;
