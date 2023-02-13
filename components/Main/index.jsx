@@ -3,6 +3,7 @@ import styles from './Main.module.css';
 import { Links } from '../Links/index';
 import { Headline } from '../Headline';
 import { useCallback } from 'react';
+import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 const ITEMS = [
@@ -42,7 +43,7 @@ export function Main(props) {
   return (
     <main className={styles.main}>
       <Headline page={props.page} handleReduce={handleReduce}>
-        <code className={classes.code}>{items.length}</code>
+        {/* <code className={classes.code}>{items.length}</code> */}
       </Headline>
       <Links items={items} />
     </main>
