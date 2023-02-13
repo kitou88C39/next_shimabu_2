@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
 
 export const useBgLightBlue = () => {
   const router = useRouter();
 
+  const bgColor = useMemo(() => {
+    return router.pathname === '/' ? 'lightblue' : 'pink';
+  }, [router.pathname]);
+
   useEffect(() => {
-    document.body.style.backgroundColor =
-      router.pathname === '/' ? 'lightblue' : 'pink';
+    document.body.style.backgroundColor = bgColor;
+    // router.pathname === '/' ? 'lightblue' : 'pink';
     return () => {
       document.body.style.backgroundColor = '';
     };
-  }, [router.pathname]);
+  }, [bgColor]);
 };
